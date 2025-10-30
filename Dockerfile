@@ -1,9 +1,9 @@
-FROM mcr.microsoft.com/azure-functions/python:4-python3.11
+FROM mcr.microsoft.com/azure-functions/python:4-python3.13
 LABEL maintainer="sre@signiant.com"
 
 #azure functions tools
 RUN apt-get update && \
-    apt-get install -y curl gpg python3 python3-pip figlet jq zip git && \
+    apt-get install -y curl gpg python3 python3-pip figlet jq zip git sudo && \
     apt install -y lsb-release && \
     curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg && \
     mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg && \
